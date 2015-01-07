@@ -1,15 +1,6 @@
 FROM centos:latest
 
 
-# from source rpm but cloud not find find rpm on any mirror
-#RUN echo -e "[mongodb]\nname=MongoDB Repository \nbaseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/ \ngpgcheck=0 \nenabled=1" >> "/etc/yum.repos.d/mongodb.repo"
-
-#RUN yum install -y mongodb-org
-
-
-#RUN semanage port -a -t mongod_port_t -p tcp 27017
-
-#RUN service mongod start
 
 
 
@@ -30,11 +21,10 @@ RUN tar -zxvf mongodb-linux-x86_64-2.6.6.tgz
 
 RUN mv /mongodb-linux-x86_64-2.6.6 /mongodb
 
-#RUN mkdir -p "mongodb/data"
+
 
 RUN mkdir -p "dbdata"
 
-#ENV 27017
 
 EXPOSE  27017
 
